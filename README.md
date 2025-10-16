@@ -4,7 +4,7 @@
 # Description
   <p style="font-size:18px;">
 This repository provides a reproducible <b>R code</b> for preprocessing DNA methylation data, screening ultra-high-dimensional CpG sites, and conducting causal mediation analysis with multi-category exposures.  
-The code is designed for large-scale omics studies (e.g., ADNI) and can be adapted to other datasets.
+The code is designed for large-scale ADNI study and can be adapted to other datasets.
 </p>
 
 # R Scripts
