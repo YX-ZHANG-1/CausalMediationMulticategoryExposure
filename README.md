@@ -9,9 +9,9 @@
 
 This repository provides reproducible R code for performing **causal mediation analysis** under **multi-category exposures** using the **Double Machine Learning (DML)** framework.  
 
-The repository contains four main scripts:
+The repository contains four main R scripts:
 
-| Script | Description |
+| R Script | Description |
 |---------|--------------|
 | **`generate_sample_data.R`** | Generates synthetic data mimicking real-world data (e.g., ADNI) for exposure (`Z`), potential mediators (`M`), potential confounders (`X`), and outcome (`Y`). |
 | **`simulate_dataset.R`** | Simulates datasets under user-specified parameters, integrating multiple variable types and distributions. |
