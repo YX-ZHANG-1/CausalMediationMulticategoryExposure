@@ -1,5 +1,10 @@
-# Causal mediation analysis of the effect of depression on Alzheimer's disease risk in older adults
+# Causal Mediation Analysis via Double Machine Learning (DML) for Multi-Category Exposure
 <p style="font-size:18px;">
+**License:** MIT License  
+**Repository:** [https://github.com/YuexiaZhang/CausalMediationDML](https://github.com/YuexiaZhang/CausalMediationDML)
+
+---
+
   
 # Description
   <p style="font-size:18px;">
