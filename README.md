@@ -37,11 +37,13 @@ while adjusting for high-dimensional confounders using penalized regression (e.g
 
 ## ⚙️ System Requirements
 
-| Requirement | Recommended |
+| Component | Requirement|
 |--------------|-------------|
 | **R version** | ≥ 3.6.0 |
 | **Operating System** | macOS ≥ 12, Linux ≥ Ubuntu 20.04, or Windows ≥ 10 |
-| **Memory** | ≥ 8 GB RAM |
+| **CPU** | ≥ 2 physical cores (2.0 GHz each); recommended ≥ 4 cores |
+| **Memory (RAM)** | Minimum 3 GB ; recommended 6–8 GB |
+| **Disk Space** | ≥ 500 MB |
 | **R Packages** | `truncnorm`, `glmnet`, `hdm`, `Matrix` |
 
 Install dependencies:
