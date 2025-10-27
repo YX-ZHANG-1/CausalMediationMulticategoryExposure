@@ -1,7 +1,7 @@
-# Causal Mediation Analysis via Double Machine Learning (DML) for Multi-Category Exposure
+# Causal Mediation Analysis via Double Machine Learning for Multi-Category Exposure
 <p style="font-size:18px;">
 **License:** MIT License  
-**Repository:** [https://github.com/YuexiaZhang/CausalMediationDML](https://github.com/YuexiaZhang/CausalMediationDML)
+**Repository:** [https://github.com/YX-ZHANG-1/CausalMediationDML](https://github.com/YuexiaZhang/CausalMediationDML)
 
 ---
 
