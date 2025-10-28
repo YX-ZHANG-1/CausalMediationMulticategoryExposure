@@ -1,5 +1,4 @@
 # Causal Mediation Analysis via Double Machine Learning for Multi-Category Exposure Variables
-
 ---
 
 
