@@ -1,16 +1,12 @@
-# Causal Mediation Analysis via Double Machine Learning for a Multi-Category Exposure Variable
-<p style="font-size:18px;">
+# Causal Mediation Analysis via Double Machine Learning for Multi-Category Exposure Variables
 
 ---
 
 
 ## 📖 Overview
 
-This repository provides R code for conducting **causal mediation analysis with a multi-category exposure variable** using a **Double Machine Learning (DML)** framework.  
-It contains reproducible scripts for:
-
-- Generating simulated datasets mimicking real biomedical data (e.g., Alzheimer’s Disease Neuroimaging Initiative [ADNI]);
-- Estimating **total**, **direct**, and **indirect** effects via DML with cross-fitting and Lasso regularization;
+This repository provides R code implementing a **causal mediation analysis framework** for **multi-category exposure variables** using the **Double Machine Learning (DML)** approach.  
+It includes all scripts necessary to **generate synthetic datasets**, **estimate total, direct, and indirect effects**, and **reproduce key analyses**.
 
 ---
 
@@ -18,27 +14,29 @@ It contains reproducible scripts for:
 
 | File | Description |
 |------|--------------|
-| **`generate_sample_data.R`** | Defines functions for simulating confounders, exposure, mediators, and outcomes based on realistic biomedical distributions (including Beta-mixture DNA methylation models). |
-| **`simulate_dataset.R`** | Specifies model parameters and generates the full simulated dataset using `generate_sample_data.R`. |
-| **`medDML_multicategory_exposure.R`** | Implements the Double Machine Learning estimation procedure for a multi-category exposure variable. |
-| **`conduct_causal_mediation_analysis.R`**| Conducts the causal mediation analysis on simulated data using `medDML_multicategory_exposure.R` and produces summaries of total, direct, and indirect effects. |
+| **`generate_sample_data.R`** | Defines functions for simulating confounders, exposures, mediators, and outcomes based on realistic biomedical distributions (e.g., Beta-mixture methylation profiles). |
+| **`simulate_dataset.R`** | Specifies simulation parameters and calls `generate_sample_data.R` to produce a complete dataset. |
+| **`medDML_multicategory_exposure.R`** | Implements the DML estimation algorithm with cross-fitting and Lasso regularization for multi-category exposures. |
+| **`conduct_causal_mediation_analysis.R`** | Conducts the causal mediation analysis using the above functions and summarizes total, direct, and indirect effects. |
 
-All scripts are written in **base R** and depend only on **CRAN-available packages**.
+All code is written in **base R**, using only **CRAN-available packages** for full reproducibility.
 
 ---
 
 ## 🧠 Scientific Context
 
-This code supports the manuscript:
+This code accompanies the manuscript:
 
-> Yuexia Zhang, Yubai Yuan, Fei Xue, Kecheng Wei, Jin Zhou, and Annie Qu (2025+). **Causal Mediation Analysis  of the Effect of Depression on Alzheimer's Disease Risk in Older Adults.** 
+> **Zhang, Y.**, Yuan, Y., Xue, F., Wei, K., Zhou, J., & Qu, A. (2025).  
+> *Causal Mediation Analysis of the Effect of Depression on Alzheimer’s Disease Risk in Older Adults.*  
+> Submitted to *Nature Communications.*
 
-The method estimates:
+The framework estimates:
 - **Total Effect (TE)**  
 - **Natural Direct Effect (NDE)**  
 - **Natural Indirect Effect (NIE)**  
 
-while adjusting for high-dimensional confounders using penalized regression (e.g., Lasso).
+while adjusting for high-dimensional confounders using  **Double Machine Learning** with **Lasso-based regularization**.
 
 ---
 
@@ -46,51 +44,46 @@ while adjusting for high-dimensional confounders using penalized regression (e.g
 
 ### 🖥️ Hardware Requirements
 
-The scripts require only a standard computer with sufficient RAM for matrix operations and cross-validation.
+The R code runs on a standard computer capable of handling moderate matrix operations and cross-validation.
 
 | Component | Recommended Specification |
 |------------|----------------------------|
-| **RAM** | ≥ 6 GB (minimum 3 GB) |
-| **CPU** | ≥ 4 cores, 2.5–3.5 GHz per core (Intel i7, AMD Ryzen 5, Apple M2 or higher) |
+| **CPU** | ≥ 4 cores @ 2.5–3.5 GHz (Intel i7, AMD Ryzen 5, or Apple M2/M4) |
+| **RAM** | Minimum 3 GB ; Recommended ≥ 6–8 GB |
 | **Disk Space** | ≥ 500 MB free |
-| **Internet Connection** | ≥ 25 Mbps (for CRAN package downloads) |
+| **Internet Speed** | ≥ 25 Mbps for downloading R packages |
+
+> 💡 *Example test system:* MacBook Pro (Apple M4 Max, 14 cores, 36 GB RAM)
 
 ---
 
 ### 💻 Software Requirements
 
-#### Operating Systems Tested
+| Component | Requirement |
+|------------|-------------|
+| **R version** | ≥ 3.6.0 (tested on R 4.4.2) |
+| **Operating Systems Tested** | macOS 15.6.1 (Sequoia, ARM64), Windows 11 (23H2, x64) |
+| **Required Packages** | `truncnorm`, `glmnet`, `Matrix`, `hdm` |
 
-| Operating System | Version | Architecture |
-|------------------|----------|---------------|
-| **macOS Sequoia** | 15.6.1 | Apple Silicon (M4 Max) |
-| **Windows 11** | 23H2 | x64 |
-
-All dependencies are CRAN-available and cross-platform compatible. Before running the R scripts, users should have R version 3.6.0 or higher. The scripts have been tested on R version 4.4.2.
+All packages are platform-independent and available via **CRAN**.
 
 ## 📦 Installation Guide
 
-### 🧰 Package Dependencies
+### 🧰 Package Installation
 
-Before running the R scripts, please ensure that all required packages are installed from **CRAN**.  
-You can install them directly from an R terminal:
+Before running the R scripts, install required packages from **CRAN**:
 
 ```r
-install.packages(c(
-  "truncnorm", "glmnet", "Matrix", "hdm"
-))
+install.packages(c("truncnorm", "glmnet", "Matrix", "hdm"))
 ```
 
 > ⏱️ **Example installation runtime:**  
-> On a **MacBook Pro (Apple M4 Max, 14 cores, 36 GB RAM)** with a stable **AT&T Fiber connection**  
+> On a **MacBook Pro (Apple M4 Max, 14 cores, 36 GB RAM)** with a stable **AT&T Fiber Internet**  
 > (**Download:** 424.7 Mbps | **Upload:** 272.8 Mbps),  
 > installation of all required packages completes in approximately **1.5 seconds**.
 
 
-### Package Versions
-
-All functions in this repository have been tested with the latest CRAN releases as of October 2025.
-The specific versions used during testing are:
+### Package Versions Tested (as of October 2025)
 
 | Package | Version |
 |------------------|----------|
@@ -101,57 +94,53 @@ The specific versions used during testing are:
 
 ## 🧪 Demo
 
-### 1️⃣ Instructions to Run the Demo
+### 1️⃣ Run the Complete Workflow
 
-This demo illustrates the complete workflow for **causal mediation analysis with a multi-category exposure**, using the four main R scripts provided in this repository.
-
-From your R terminal or RStudio console, run the following commands **in order**:
+From your R terminal or RStudio console, execute:
 
 ```r
-# Step 1. Set working directory to the repository folder
+# Step 1. Set working directory to this repository 
 setwd("path/to/CausalMediationMulticategoryExposure")
 
-# Step 2. Generate a simulated dataset mimicking real biomedical data
+# Step 2. Generate a simulated dataset
 source("simulate_dataset.R")
 
-# Step 3. Conduct the causal mediation analysis and save results
+# Step 3. Conduct the causal mediation analysis 
 source("conduct_causal_mediation_analysis.R")
 ```
 
 ### 2️⃣ Expected Output
-After the demo completes, the following output files will appear in your working directory:
 
-| File                                                 | Description                                                                                        |
-| ---------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `simulated_data.csv`                                 | Contains the generated sample dataset used for causal mediation analysis                                            |
-| `mediation_analysis_results.RData`                   | Stores estimated total, direct, and indirect effects and their related information                                                |
-| `df_total`, `df_direct`, `df_med` (in R environment) | Data frames summarizing estimated effects, standard errors, 95% confidence intervals, and p-values |
+| Output File                        | Description                                                                       |
+| ---------------------------------- | --------------------------------------------------------------------------------- |
+| `simulated_data.csv`               | Generated dataset containing exposure, mediators, confounders, and outcome        |
+| `mediation_analysis_results.RData` | Saved results of total, direct, and indirect effects                              |
+| `df_total`, `df_direct`, `df_med`  | Summary data frames (in R environment) with estimates, standard errors, 95% CIs, and p-values |
 
-### 3️⃣ Expected Run Time 
-On a **MacBook Pro (Apple M4 Max, 14 cores, 36 GB RAM)**, the simulated data generation and causal mediation analysis completes in approximately **50 seconds**.
+
+### 3️⃣ Expected Runtime 
+On a **MacBook Pro (Apple M4 Max, 14 cores, 36 GB RAM)**, the complete simulation and analysis run in approximately **50 seconds**.
 
 ## 🧭 Instructions for Use
 
-### 🔹 How to Run the Software on Your Own Data 
+### 🔹 Run on Your Own Data
 
-The R scripts in this repository can be easily adapted to analyze your own dataset  
-for **causal mediation analysis with a multi-category exposure variable**.
+To apply the DML-based causal mediation framework to your dataset:
 
 #### 1. Prepare your data
 Your dataset should include:
-- **Outcome variable (`Y`)** — continuous or binary outcome.  
-- **Exposure variable (`Z`)** — multi-category exposure, ensure the control level of the exposure variable is coded as 0.  
-- **Potential mediator(s) (`M`)** — one or more potential mediators (e.g., biomarkers, imaging measures).  
-- **Potential confounders (`X`)** — potential confounders (continuous or categorical) affecting exposure, outcome, and/or mediators.
+- **Outcome variable (`Y`)** — continuous or binary 
+- **Exposure variable (`Z`)** — multi-category (control level coded as 0)  
+- **Potential mediator(s) (`M`)** — one or more continuous/binary potentail mediators
+- **Potential confounders (`X`)** — potential pre-treatment covariates
 
-The dataset must not contain missing values and should be stored as a .csv file. 
+Ensure no missing values and save as **your_data.csv**.
 
-#### 2. Repalce simulated_data.csv in the conduct_causal_mediation_analysis. R with your own data file. 
-Example:
+#### 2. Load your dataset
 ```r
 data <- read.csv("your_data.csv", header = TRUE)
 ```
-#### 3. Format data for analysis 
+#### 3. Format variables 
 Example:
 ```r
 y <- as.matrix(data$Y)
@@ -159,8 +148,11 @@ z <- as.matrix(data$Z)
 m <- as.matrix(data[, c("Mediator1", "Mediator2")])
 x <- as.matrix(data[, c("Confounder1", "Confouer2")])
 ```
-#### 4. Run the revised script conduct_causal_mediation_analysis. R for causal mediation analysis
-
+#### 4. Run the analysis
+Edit **conduct_causal_mediation_analysis.R** to load your dataset, then run:
+```r
+source("conduct_causal_mediation_analysis.R")
+```
 
 ## 🪪 License
 
