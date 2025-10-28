@@ -1,7 +1,5 @@
 # Causal Mediation Analysis via Double Machine Learning for a Multi-Category Exposure Variable
 <p style="font-size:18px;">
-**License:** MIT License  
-**Repository:** [https://github.com/YX-ZHANG-1/CausalMediationMulticategoryExposure](https://github.com/YX-ZHANG-1/CausalMediationMulticategoryExposure)
 
 ---
 
