@@ -26,9 +26,8 @@ All code is written in **base R**, using only **CRAN-available packages** for fu
 
 This code accompanies the manuscript:
 
-> **Zhang, Y.**, Yuan, Y., Xue, F., Wei, K., Zhou, J., & Qu, A. (2025).  
+> **Zhang, Y.**, Yuan, Y., Xue, F., Wei, K., Zhou, J., & Qu, A. (2025+).  
 > *Causal Mediation Analysis of the Effect of Depression on Alzheimer’s Disease Risk in Older Adults.*  
-> Submitted to *Nature Communications.*
 
 The framework estimates:
 - **Total Effect (TE)**  
